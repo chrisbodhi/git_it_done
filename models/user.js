@@ -1,7 +1,7 @@
 'use strict';
 var mongoose = require('mongoose'),
   bcrypt = require('bcrypt'),
-  nconf = require('nconf'),
+  nconf = require('nconf');
 
 var userModel = function () {
 
@@ -21,7 +21,7 @@ var userModel = function () {
     }
 
     var DIFFICULTY = (nconf.get('bcrypt') && nconf.get('bcrypt').difficulty) || 8;
-    
+
     var hashedPwd = bcrypt.hashSync(user.password, DIFFICULTY);
 
     user.password = hashedPwd;
@@ -32,7 +32,7 @@ var userModel = function () {
   userSchema.methods.passwordMatches = function (plainText) {
     var user = this;
     return bcrypt.compareSync(plainText, user.password);
-  }
+  };
 
   return mongoose.model('User', userSchema);
 };
