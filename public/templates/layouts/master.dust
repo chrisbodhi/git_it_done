@@ -12,9 +12,13 @@
       <nav>
         <ul class="nm-np inline">
           <li><a href="/">Home</a></li>
-          <li><a href="/login">Log In</a></li>
-          <li><a href="/profile">Profile</a></li>
+          {?user}
+            <li><a href="/logout">Logout ({user.name})</a></li>
+          {:else}
+            <li><a href="/login">Log In</a></li>
+          {/user}
           <li><a href="/admin">Admin</a></li>
+          <li><a href="/profile">Profile</a></li>
         </ul>
       </nav>
   </div>

@@ -10,6 +10,7 @@ var kraken = require('kraken-js'),
 
 var db = require('./lib/database');
 
+
 app.configure = function configure(nconf, next) {
     // Configure the database!
     db.config(nconf.get('databaseConfig'));
@@ -24,7 +25,26 @@ app.configure = function configure(nconf, next) {
             done(null, user);
         });
     });
+
     next(null);
+    
+    var u1 = new User({
+        name: "Kraken McSquid",
+        login: "kraken",
+        password: "password",
+        role: "admin"
+    });
+
+    var u2 = new User({
+        name: "Ash Williams",
+        login: "awilliams",
+        password: "password",
+        role: "user"
+    });
+
+    u1.save();
+    u2.save();
+    
 };
 
 

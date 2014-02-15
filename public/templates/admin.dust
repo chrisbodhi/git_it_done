@@ -2,5 +2,5 @@
 
 {<body}
     <h1>{@pre type="content" key="greeting"/}</h1>
-    <p>Welcome to the Admin's Private Clubs. No users.</p>
+    <p>Welcome to the Admin's Private Club. No users.</p>
 {/body}
