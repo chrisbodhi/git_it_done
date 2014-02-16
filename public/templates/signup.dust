@@ -13,10 +13,10 @@
           </ul>
         {/messages}
         <table>
-          <tr>
+          <!-- <tr>
             <td><label for="username">Name: </label></td>
             <td><input id="username" name="username" type="text" /></td>
-          </tr>
+          </tr> -->
           <tr>
             <td><label for="email">Email: </label></td>
             <td><input id="email" name="email" type="email" /></td>
@@ -25,13 +25,13 @@
             <td><label for="password">Password: </label></td>
             <td><input id="password" name="password" type="password" /></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td><label for="confirmPassword">Confirm Password: </label></td>
             <td><input id="confirmPassword" name="confirmPassword" type="password" /></td>
-          </tr>
+          </tr> -->
           <tr>
             <td>
-              <input type="submit" value="Sign Up!" />
+              <button type="submit">Sign Up!</button>
               <input type="hidden" name="_csrf" value="{_csrf}" />
             </td>
             <td></td>
