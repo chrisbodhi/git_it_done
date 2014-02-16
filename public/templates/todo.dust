@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>To Do</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="date.js"></script>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div ng-controller="ToDoCtrl">
+      <h2>To Do: {{totalToDos()}}</h2>
+        <ul>
+          <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done" />
+            <span class="done-{{todo.done}}">{{todo.text}} || due on {{todo.dueDate}}</span>
+          </li>
+          <li>
+            {{new_do}}
+          </li>
+        </ul>
+        <input type="text" value="new_do" ng-model="new_do"/>
+        <input id="datepicker" ng-model="datepicker"/>
+        <button ng-click="addNew()">do this</button>
+        <button ng-click="moveDone()">remove</button>
+      <h2>Done: {{totalDone()}}</h2>
+        <ul>
+          <li ng-repeat="didIt in done">
+            {{didIt.text}}
+          </li>
+        </ul>
+    </div>
+  </body>
+</html>

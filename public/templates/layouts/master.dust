@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="nm-np">
+<html lang="en" class="nm-np" ng-app>
 <head>
     <meta charset="utf-8"/>
     <title>{+title /}</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
     <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 </head>
 <body class="nm-np">
 <header class="grey">
@@ -14,11 +18,12 @@
           <li><a href="/">Home</a></li>
           {?user}
             <li><a href="/logout">Logout ({user.name})</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/profile">Profile</a></li>
           {:else}
             <li><a href="/login">Log In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
           {/user}
-          <li><a href="/admin">Admin</a></li>
-          <li><a href="/profile">Profile</a></li>
         </ul>
       </nav>
   </div>

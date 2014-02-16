@@ -8,9 +8,6 @@ var kraken = require('kraken-js'),
     User = require('./models/user'),
     app = {};
 
-var db = require('./lib/database');
-
-
 app.configure = function configure(nconf, next) {
     // Configure the database!
     db.config(nconf.get('databaseConfig'));
@@ -44,7 +41,7 @@ app.configure = function configure(nconf, next) {
 
     u1.save();
     u2.save();
-    
+
 };
 
 

@@ -1,5 +1,7 @@
 {
     "name": "git-it-done",
     "version": "0.0.1",
-    "dependencies": {}
+    "dependencies": {
+      "angular-ui-date": "latest"
+    }
 }
